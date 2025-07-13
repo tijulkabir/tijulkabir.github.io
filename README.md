@@ -11,7 +11,7 @@
 
 - 🐍 Learning **C++** and **Python**
 - 📚 Studying: _**Network Basics for Hackers**_
-- 🎮 Developing **2D OpenGL Games** (Snake, Racing, and more)
+- 🎮 Developing **2D OpenGL Games and Project on Restaurnt Management System** (Snake, Racing, and more)
 - 💻 Practicing **Linux commands**, solving **CTFs**, and exploring **cyber labs**
 
 ---
