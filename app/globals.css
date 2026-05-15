@@ -1,26 +1,213 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0a0a0a;
+  --foreground: #e0e0e0;
+  --accent-green: #00FF41;
+  --accent-blue: #3b82f6;
+  --accent-green-dim: #00cc34;
+  --surface: #111111;
+  --surface-2: #1a1a1a;
+  --surface-3: #222222;
+  --border: #2a2a2a;
+  --text-muted: #666666;
+  --text-secondary: #999999;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-accent: var(--accent-green);
+  --color-accent-blue: var(--accent-blue);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-border: var(--border);
+  --color-muted: var(--text-muted);
+  --color-secondary: var(--text-secondary);
+  --font-sans: var(--font-inter), system-ui, sans-serif;
+  --font-mono: var(--font-jetbrains), monospace;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-green) var(--surface);
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: var(--surface);
+}
+
+*::-webkit-scrollbar-thumb {
+  background: var(--accent-green);
+  border-radius: 3px;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(0, 255, 65, 0.2);
+  color: #00FF41;
+}
+
+/* ===== GLOW EFFECTS ===== */
+.glow-green {
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.15),
+              0 0 30px rgba(0, 255, 65, 0.08),
+              0 0 60px rgba(0, 255, 65, 0.04);
+}
+
+.glow-green-hover:hover {
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.25),
+              0 0 40px rgba(0, 255, 65, 0.12),
+              0 0 80px rgba(0, 255, 65, 0.06);
+}
+
+.glow-blue {
+  box-shadow: 0 0 15px rgba(59, 130, 246, 0.15),
+              0 0 30px rgba(59, 130, 246, 0.08);
+}
+
+.glow-text-green {
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5),
+               0 0 20px rgba(0, 255, 65, 0.3),
+               0 0 40px rgba(0, 255, 65, 0.15);
+}
+
+.glow-text-blue {
+  text-shadow: 0 0 10px rgba(59, 130, 246, 0.5),
+               0 0 20px rgba(59, 130, 246, 0.3);
+}
+
+/* ===== CURSOR BLINK ===== */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.cursor-blink {
+  animation: blink 1s step-end infinite;
+}
+
+/* ===== SCANLINE OVERLAY ===== */
+.scanlines::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 2px,
+    rgba(0, 255, 65, 0.015) 2px,
+    rgba(0, 255, 65, 0.015) 4px
+  );
+  pointer-events: none;
+  z-index: 50;
+}
+
+/* ===== GRID BACKGROUND ===== */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 255, 65, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 65, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+/* ===== NOISE TEXTURE ===== */
+.noise::after {
+  content: '';
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  right: -50%;
+  bottom: -50%;
+  width: 200%;
+  height: 200%;
+  background: transparent url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E") repeat;
+  pointer-events: none;
+  z-index: 49;
+}
+
+/* ===== TICKER ANIMATION ===== */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.ticker-scroll {
+  animation: ticker 30s linear infinite;
+}
+
+.ticker-scroll:hover {
+  animation-play-state: paused;
+}
+
+/* ===== PULSE RING ===== */
+@keyframes pulse-ring {
+  0% { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-green);
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+/* ===== GRADIENT LINE ===== */
+.gradient-line {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--accent-green), transparent);
+}
+
+/* ===== CARD STYLES ===== */
+.card-hover {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-hover:hover {
+  transform: translateY(-4px);
+  border-color: rgba(0, 255, 65, 0.3);
+}
+
+/* ===== MATRIX RAIN (hero bg) ===== */
+@keyframes matrix-fall {
+  0% { transform: translateY(-100%); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0; }
+}
+
+/* ===== PROFICIENCY BAR ===== */
+@keyframes fill-bar {
+  from { width: 0%; }
+  to { width: var(--bar-width); }
+}
+
+.proficiency-bar {
+  animation: fill-bar 1s ease-out forwards;
+}
+
+/* ===== FLOATING DOTS ===== */
+@keyframes float-up {
+  0% { transform: translateY(0) translateX(0); opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
 }
