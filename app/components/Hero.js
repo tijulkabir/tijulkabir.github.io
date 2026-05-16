@@ -6,7 +6,8 @@ import { motion } from "framer-motion";
 const roles = [
   "Offensive Security Researcher",
   "Competitive Programmer",
-  "Software Developer",
+  "Systems Developer",
+  "CTF Player",
 ];
 
 function MatrixRain() {
@@ -119,6 +120,13 @@ function RoleRotator() {
   );
 }
 
+const quickStats = [
+  { label: "TryHackMe", value: "#66 BD", icon: "🔒" },
+  { label: "CF Streak", value: "250+", icon: "🔥" },
+  { label: "Projects", value: "9+", icon: "⚡" },
+  { label: "CTF Rank", value: "35th", icon: "🏴" },
+];
+
 export default function Hero() {
   return (
     <section
@@ -129,6 +137,11 @@ export default function Hero() {
 
       {/* Radial Gradient Overlay */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0a0a0a]/60 to-[#0a0a0a] z-[1]" />
+
+      {/* Subtle radial spotlight */}
+      <div className="absolute inset-0 z-[2]" style={{
+        background: "radial-gradient(ellipse 60% 50% at 50% 40%, rgba(0,255,65,0.04) 0%, transparent 70%)"
+      }} />
 
       <div className="relative z-10 max-w-5xl mx-auto px-6 text-center">
         {/* Terminal Prompt */}
@@ -168,32 +181,62 @@ export default function Hero() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 2.5 }}
-          className="font-mono text-lg md:text-2xl mb-12 h-10"
+          className="font-mono text-lg md:text-2xl mb-10 h-10"
         >
           <span className="text-[#999]">{"$ "}</span>
           <RoleRotator />
+        </motion.div>
+
+        {/* Quick Stats Bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2.8 }}
+          className="flex items-center justify-center gap-6 md:gap-10 mb-12 flex-wrap"
+        >
+          {quickStats.map((stat, i) => (
+            <motion.div
+              key={stat.label}
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 2.8 + i * 0.1 }}
+              className="flex items-center gap-2 group"
+            >
+              <span className="text-base">{stat.icon}</span>
+              <div className="text-left">
+                <div className="font-mono text-[10px] text-[#555] uppercase tracking-wider">{stat.label}</div>
+                <div className="font-mono text-sm text-[#00FF41] font-semibold">{stat.value}</div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
 
         {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 3 }}
+          transition={{ delay: 3.2 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-4"
         >
           <a
             href="#projects"
-            className="group relative font-mono text-sm tracking-wider px-8 py-3 border border-[#00FF41]/50 text-[#00FF41] bg-[#00FF41]/5 hover:bg-[#00FF41]/15 transition-all duration-300 glow-green-hover"
+            className="group relative font-mono text-sm tracking-wider px-8 py-3 border border-[#00FF41]/50 text-[#00FF41] bg-[#00FF41]/5 hover:bg-[#00FF41]/15 transition-all duration-300 glow-green-hover rounded-md"
           >
-            <span className="relative z-10">{"[ View Exploits ]"}</span>
+            <span className="relative z-10">{"[ View Projects ]"}</span>
           </a>
           <a
             href="https://github.com/tijulkabir"
             target="_blank"
             rel="noopener noreferrer"
-            className="group font-mono text-sm tracking-wider px-8 py-3 border border-[#3b82f6]/40 text-[#3b82f6] bg-[#3b82f6]/5 hover:bg-[#3b82f6]/15 transition-all duration-300"
+            className="group font-mono text-sm tracking-wider px-8 py-3 border border-[#3b82f6]/40 text-[#3b82f6] bg-[#3b82f6]/5 hover:bg-[#3b82f6]/15 transition-all duration-300 rounded-md"
           >
-            {"[ Check My Code ]"}
+            {"[ GitHub Profile ]"}
+          </a>
+          <a
+            href="#contact"
+            className="group font-mono text-sm tracking-wider px-8 py-3 border border-[#666]/30 text-[#999] hover:text-white hover:border-[#999]/50 transition-all duration-300 rounded-md"
+          >
+            {"[ Contact ]"}
           </a>
         </motion.div>
 

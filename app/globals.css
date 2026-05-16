@@ -211,3 +211,52 @@ body {
   50% { opacity: 1; }
   100% { transform: translateY(-100vh) translateX(20px); opacity: 0; }
 }
+
+/* ===== ENHANCED RESPONSIVENESS ===== */
+@media (max-width: 640px) {
+  .gradient-line {
+    width: 60px !important;
+  }
+}
+
+/* ===== SMOOTH FONT RENDERING ===== */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+/* ===== FOCUS STYLES ===== */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent-green);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* ===== CARD GLASS EFFECT ===== */
+.card-glass {
+  background: rgba(17, 17, 17, 0.8);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* ===== LINK UNDERLINE ANIMATION ===== */
+.link-underline {
+  position: relative;
+}
+
+.link-underline::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-green);
+  transition: width 0.3s ease;
+}
+
+.link-underline:hover::after {
+  width: 100%;
+}

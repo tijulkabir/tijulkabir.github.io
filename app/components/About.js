@@ -3,18 +3,24 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
-  { label: "TryHackMe Rank", value: "#66", sub: "Bangladesh" },
-  { label: "CTF National Best", value: "35th", sub: "IH CTF 2026" },
-  { label: "Day Streak", value: "250+", sub: "Continuous" },
-  { label: "CF Target", value: "1600+", sub: "Expert" },
+  { label: "TryHackMe Rank", value: "#66", sub: "Bangladesh", color: "#00FF41" },
+  { label: "CTF National", value: "35th", sub: "IH CTF 2026", color: "#3b82f6" },
+  { label: "Day Streak", value: "250+", sub: "Continuous", color: "#f59e0b" },
+  { label: "CF Rating", value: "1446", sub: "Pupil → Expert", color: "#a855f7" },
 ];
 
 const certs = [
-  "CCEP — Cybersecurity Educator Professional",
-  "CPPS — Phishing Prevention Specialist",
-  "Meta Hacker Cup 2025 — Round 1",
-  "BDSec CTF 2025 Participant",
-  "IH CTF 2026 — 35th Place (1057pts)",
+  { name: "CCEP — Cybersecurity Educator Professional", type: "cert" },
+  { name: "CPPS — Phishing Prevention Specialist", type: "cert" },
+  { name: "Meta Hacker Cup 2025 — Round 1", type: "comp" },
+  { name: "BDSec CTF 2025 — Participant", type: "comp" },
+  { name: "IH CTF 2026 — 35th Place (1057pts)", type: "comp" },
+];
+
+const timeline = [
+  { year: "2024", event: "Started CSE at PUST", icon: "📚" },
+  { year: "2025", event: "TryHackMe Top 66 BD, BDSec CTF, Meta Hacker Cup", icon: "🔒" },
+  { year: "2026", event: "IH CTF 35th, 250+ Day Streak, Building Echo & NetForge", icon: "⚡" },
 ];
 
 const fadeUp = {
@@ -36,67 +42,108 @@ export default function About() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6">
-          {/* Main Bio */}
+          {/* Main Bio - Enhanced */}
           <motion.div custom={0} variants={fadeUp} initial="hidden" animate={isInView ? "visible" : "hidden"} className="md:col-span-2 bg-[#111] border border-[#2a2a2a] rounded-lg p-8 card-hover glow-green-hover">
             <div className="flex items-start gap-6">
               <div className="relative shrink-0 hidden sm:block">
-                <div className="w-24 h-24 rounded-lg bg-gradient-to-br from-[#00FF41]/20 to-[#3b82f6]/20 border border-[#00FF41]/30 flex items-center justify-center">
-                  <svg viewBox="0 0 100 100" className="w-20 h-20" fill="none">
-                    <circle cx="50" cy="35" r="18" fill="#00FF41" opacity="0.2" stroke="#00FF41" strokeWidth="1.5" />
-                    <path d="M50 53 C30 53 20 70 20 85 L80 85 C80 70 70 53 50 53Z" fill="#00FF41" opacity="0.15" stroke="#00FF41" strokeWidth="1.5" />
-                    <rect x="34" y="28" width="12" height="8" rx="2" stroke="#00FF41" strokeWidth="1.5" fill="none" />
-                    <rect x="54" y="28" width="12" height="8" rx="2" stroke="#00FF41" strokeWidth="1.5" fill="none" />
-                    <line x1="46" y1="32" x2="54" y2="32" stroke="#00FF41" strokeWidth="1.5" />
-                    <text x="37" y="35" fill="#00FF41" fontSize="6" fontFamily="monospace">&gt;_</text>
-                    <text x="57" y="35" fill="#00FF41" fontSize="6" fontFamily="monospace">0x</text>
-                  </svg>
+                <div className="w-24 h-24 rounded-lg bg-gradient-to-br from-[#00FF41]/20 to-[#3b82f6]/20 border border-[#00FF41]/30 flex items-center justify-center overflow-hidden">
+                  <div className="font-mono text-[#00FF41] text-3xl font-bold">TK</div>
                 </div>
                 <div className="absolute -bottom-1 -right-1 w-4 h-4 bg-[#00FF41] rounded-full pulse-ring" />
               </div>
               <div className="flex-1">
                 <h3 className="text-xl font-bold text-white mb-1">Tijul Kabir Toha <span className="font-mono text-[#00FF41] text-sm font-normal">aka Froster</span></h3>
-                <p className="font-mono text-xs text-[#666] mb-4">CSE @ Pabna University of Science &amp; Technology</p>
-                <p className="text-[#999] text-sm leading-relaxed">
-                  Offensive security researcher with a passion for breaking things (ethically). CTF player for <span className="text-[#00FF41]">PUST_Intruders</span>, ranked <span className="text-white font-semibold">#66 nationally</span> on TryHackMe with <span className="text-white font-semibold">250+ day streak</span>. Pushing toward <span className="text-[#3b82f6]">Expert (1600+)</span> on Codeforces.
+                <p className="font-mono text-xs text-[#666] mb-4">CSE @ Pabna University of Science &amp; Technology &bull; Year 2</p>
+                <p className="text-[#999] text-sm leading-relaxed mb-4">
+                  Offensive security researcher with a passion for breaking things (ethically). CTF player for <span className="text-[#00FF41]">PUST_Intruders</span>, ranked <span className="text-white font-semibold">#66 nationally</span> on TryHackMe with a <span className="text-white font-semibold">250+ day streak</span>. Building open-source security tools and pushing toward <span className="text-[#3b82f6]">Expert (1600+)</span> on Codeforces.
                 </p>
+                <div className="flex flex-wrap gap-2">
+                  {["Pentesting", "CTF", "Reverse Engineering", "Systems Programming", "Competitive Programming"].map((tag) => (
+                    <span key={tag} className="font-mono text-[10px] px-2 py-1 rounded bg-[#00FF41]/5 border border-[#00FF41]/15 text-[#00FF41]/80">{tag}</span>
+                  ))}
+                </div>
               </div>
             </div>
           </motion.div>
 
-          {/* Status Card */}
+          {/* Status Card - Enhanced */}
           <motion.div custom={1} variants={fadeUp} initial="hidden" animate={isInView ? "visible" : "hidden"} className="bg-[#111] border border-[#2a2a2a] rounded-lg p-6 card-hover glow-green-hover">
             <div className="font-mono text-xs text-[#666] mb-4 flex items-center gap-2">
               <span className="w-2 h-2 bg-[#00FF41] rounded-full animate-pulse" />SYSTEM STATUS
             </div>
             <div className="space-y-3">
-              {[["mode","ACTIVE","text-[#00FF41]"],["team","PUST_Intruders","text-white"],["country","🇧🇩 Bangladesh","text-white"],["codechef","1446 ★★","text-[#3b82f6]"],["linkedin","422 followers","text-white"]].map(([k,v,c])=>(
+              {[
+                ["mode", "ACTIVE", "text-[#00FF41]"],
+                ["team", "PUST_Intruders", "text-white"],
+                ["country", "🇧🇩 Bangladesh", "text-white"],
+                ["codechef", "1446 ★★", "text-[#3b82f6]"],
+                ["repos", "9 public", "text-white"],
+                ["focus", "Offensive Sec", "text-[#f59e0b]"],
+              ].map(([k, v, c]) => (
                 <div key={k} className="flex justify-between items-baseline">
-                  <span className="text-xs text-[#666]">{k}</span>
+                  <span className="text-xs text-[#666] font-mono">{k}</span>
                   <span className={`font-mono text-sm ${c}`}>{v}</span>
                 </div>
               ))}
             </div>
           </motion.div>
 
-          {/* Stats */}
+          {/* Stats with colors */}
           {stats.map((s, i) => (
-            <motion.div key={s.label} custom={i+2} variants={fadeUp} initial="hidden" animate={isInView ? "visible" : "hidden"} className="bg-[#111] border border-[#2a2a2a] rounded-lg p-6 card-hover glow-green-hover">
+            <motion.div key={s.label} custom={i+2} variants={fadeUp} initial="hidden" animate={isInView ? "visible" : "hidden"} className="bg-[#111] border border-[#2a2a2a] rounded-lg p-6 card-hover glow-green-hover group relative overflow-hidden">
+              {/* Subtle color accent */}
+              <div className="absolute top-0 left-0 w-full h-0.5" style={{ background: `linear-gradient(90deg, transparent, ${s.color}, transparent)` }} />
               <div className="font-mono text-xs text-[#666] mb-2">{s.label}</div>
-              <div className="font-mono text-3xl font-bold text-[#00FF41] glow-text-green mb-1">{s.value}</div>
+              <div className="font-mono text-3xl font-bold glow-text-green mb-1" style={{ color: s.color }}>{s.value}</div>
               <div className="text-xs text-[#999]">{s.sub}</div>
             </motion.div>
           ))}
 
-          {/* Certs */}
+          {/* Timeline */}
           <motion.div custom={6} variants={fadeUp} initial="hidden" animate={isInView ? "visible" : "hidden"} className="md:col-span-3 bg-[#111] border border-[#2a2a2a] rounded-lg p-6 card-hover">
+            <div className="font-mono text-xs text-[#666] mb-6 flex items-center gap-2">
+              <span className="text-[#00FF41]">⬡</span> JOURNEY
+            </div>
+            <div className="relative">
+              {/* Timeline line */}
+              <div className="absolute top-0 bottom-0 left-6 w-px bg-gradient-to-b from-[#00FF41]/50 via-[#3b82f6]/30 to-transparent hidden sm:block" />
+              <div className="space-y-6">
+                {timeline.map((t, i) => (
+                  <motion.div
+                    key={t.year}
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={isInView ? { opacity: 1, x: 0 } : {}}
+                    transition={{ delay: 0.8 + i * 0.15 }}
+                    className="flex items-start gap-4 sm:pl-14 relative"
+                  >
+                    <div className="absolute left-3.5 w-5 h-5 rounded-full bg-[#111] border-2 border-[#00FF41]/40 flex items-center justify-center hidden sm:flex">
+                      <div className="w-2 h-2 rounded-full bg-[#00FF41]" />
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <span className="text-lg">{t.icon}</span>
+                      <div>
+                        <span className="font-mono text-sm text-[#00FF41] font-semibold">{t.year}</span>
+                        <p className="text-sm text-[#999] mt-0.5">{t.event}</p>
+                      </div>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Certifications & Competitions */}
+          <motion.div custom={7} variants={fadeUp} initial="hidden" animate={isInView ? "visible" : "hidden"} className="md:col-span-3 bg-[#111] border border-[#2a2a2a] rounded-lg p-6 card-hover">
             <div className="font-mono text-xs text-[#666] mb-4 flex items-center gap-2">
-              <span className="text-[#00FF41]">⬡</span> CERTIFICATIONS
+              <span className="text-[#00FF41]">⬡</span> CERTIFICATIONS & COMPETITIONS
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               {certs.map((c, i) => (
-                <div key={i} className="flex items-start gap-2 px-3 py-2 bg-[#0a0a0a] border border-[#1a1a1a] rounded text-sm">
-                  <span className="text-[#00FF41] mt-0.5 shrink-0">✓</span>
-                  <span className="text-[#999]">{c}</span>
+                <div key={i} className="flex items-start gap-2 px-3 py-2.5 bg-[#0a0a0a] border border-[#1a1a1a] rounded-md text-sm group hover:border-[#00FF41]/20 transition-colors">
+                  <span className={`mt-0.5 shrink-0 ${c.type === "cert" ? "text-[#00FF41]" : "text-[#3b82f6]"}`}>
+                    {c.type === "cert" ? "✓" : "🏆"}
+                  </span>
+                  <span className="text-[#999]">{c.name}</span>
                 </div>
               ))}
             </div>
