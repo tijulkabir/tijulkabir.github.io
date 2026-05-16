@@ -5,8 +5,8 @@ import { useRef } from "react";
 const stats = [
   { label: "TryHackMe Rank", value: "#66", sub: "Bangladesh", color: "#00FF41" },
   { label: "CTF National", value: "35th", sub: "IH CTF 2026", color: "#3b82f6" },
-  { label: "Day Streak", value: "250+", sub: "Continuous", color: "#f59e0b" },
-  { label: "CF Rating", value: "1446", sub: "Pupil → Expert", color: "#a855f7" },
+  { label: "Day Streak", value: "300+", sub: "Continuous", color: "#f59e0b" },
+  { label: "CF Rating", value: "914", sub: "Newbie → Pupil", color: "#2dd733ff" },
 ];
 
 const certs = [
@@ -19,8 +19,8 @@ const certs = [
 
 const timeline = [
   { year: "2024", event: "Started CSE at PUST", icon: "📚" },
-  { year: "2025", event: "TryHackMe Top 66 BD, BDSec CTF, Meta Hacker Cup", icon: "🔒" },
-  { year: "2026", event: "IH CTF 35th, 250+ Day Streak, Building Echo & NetForge", icon: "⚡" },
+  { year: "2025", event: "TryHackMe Top 1% globally and #66 in BD, BDSec CTF, Meta Hacker Cup", icon: "🔒" },
+  { year: "2026", event: "IH CTF 35th, 300+ Day Streak, Building Echo & NetForge", icon: "⚡" },
 ];
 
 const fadeUp = {
@@ -74,11 +74,12 @@ export default function About() {
             <div className="space-y-3">
               {[
                 ["mode", "ACTIVE", "text-[#00FF41]"],
+                ["focus", "Offensive Sec", "text-[#f59e0b]"],
                 ["team", "PUST_Intruders", "text-white"],
                 ["country", "🇧🇩 Bangladesh", "text-white"],
-                ["codechef", "1446 ★★", "text-[#3b82f6]"],
+                ["codechef", "1446 2★", "text-[#3b82f6]"],
                 ["repos", "9 public", "text-white"],
-                ["focus", "Offensive Sec", "text-[#f59e0b]"],
+
               ].map(([k, v, c]) => (
                 <div key={k} className="flex justify-between items-baseline">
                   <span className="text-xs text-[#666] font-mono">{k}</span>
@@ -90,7 +91,7 @@ export default function About() {
 
           {/* Stats with colors */}
           {stats.map((s, i) => (
-            <motion.div key={s.label} custom={i+2} variants={fadeUp} initial="hidden" animate={isInView ? "visible" : "hidden"} className="bg-[#111] border border-[#2a2a2a] rounded-lg p-6 card-hover glow-green-hover group relative overflow-hidden">
+            <motion.div key={s.label} custom={i + 2} variants={fadeUp} initial="hidden" animate={isInView ? "visible" : "hidden"} className="bg-[#111] border border-[#2a2a2a] rounded-lg p-6 card-hover glow-green-hover group relative overflow-hidden">
               {/* Subtle color accent */}
               <div className="absolute top-0 left-0 w-full h-0.5" style={{ background: `linear-gradient(90deg, transparent, ${s.color}, transparent)` }} />
               <div className="font-mono text-xs text-[#666] mb-2">{s.label}</div>
