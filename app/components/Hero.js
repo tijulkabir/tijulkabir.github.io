@@ -121,10 +121,10 @@ function RoleRotator() {
 }
 
 const quickStats = [
-  { label: "TryHackMe", value: "#66 BD", icon: "🔒" },
-  { label: "CF Streak", value: "250+", icon: "🔥" },
+  { label: "TryHackMe", value: "Top 1% Globally\n#66 BD", icon: "🛡️" },
+  { label: "THM Streak", value: "300 Days", icon: "⏳" },
+  { label: "CTF", value: "#35 BD", icon: "🏴" },
   { label: "Projects", value: "9+", icon: "⚡" },
-  { label: "CTF Rank", value: "35th", icon: "🏴" },
 ];
 
 export default function Hero() {
@@ -222,7 +222,7 @@ export default function Hero() {
             href="#projects"
             className="group relative font-mono text-sm tracking-wider px-8 py-3 border border-[#00FF41]/50 text-[#00FF41] bg-[#00FF41]/5 hover:bg-[#00FF41]/15 transition-all duration-300 glow-green-hover rounded-md"
           >
-            <span className="relative z-10">{"[ View Projects ]"}</span>
+            <span className="relative z-10">{" View Projects "}</span>
           </a>
           <a
             href="https://github.com/tijulkabir"
@@ -230,13 +230,13 @@ export default function Hero() {
             rel="noopener noreferrer"
             className="group font-mono text-sm tracking-wider px-8 py-3 border border-[#3b82f6]/40 text-[#3b82f6] bg-[#3b82f6]/5 hover:bg-[#3b82f6]/15 transition-all duration-300 rounded-md"
           >
-            {"[ GitHub Profile ]"}
+            {" GitHub Profile "}
           </a>
           <a
             href="#contact"
             className="group font-mono text-sm tracking-wider px-8 py-3 border border-[#666]/30 text-[#999] hover:text-white hover:border-[#999]/50 transition-all duration-300 rounded-md"
           >
-            {"[ Contact ]"}
+            {" Contact "}
           </a>
         </motion.div>
 
