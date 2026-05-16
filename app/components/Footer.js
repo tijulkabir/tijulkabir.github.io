@@ -41,9 +41,18 @@ const socials = [
   },
   {
     name: "Codeforces",
+    handle: "@tijulkabir1",
+    url: "https://codeforces.com/profile/tijulkabir1",
+    desc: "Rating 914",
+    icon: (
+      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="14" width="5" height="8" rx="1" fill="currentColor" opacity="0.5" /><rect x="9.5" y="8" width="5" height="14" rx="1" fill="currentColor" opacity="0.7" /><rect x="17" y="2" width="5" height="20" rx="1" fill="currentColor" /></svg>
+    ),
+  },
+  {
+    name: "Codechef",
     handle: "@tijulkabir",
-    url: "https://codeforces.com/profile/tijulkabir",
-    desc: "Rating 1446",
+    url: "https://www.codechef.com/users/tijulkabir",
+    desc: "Rating 1446 2 star",
     icon: (
       <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><rect x="2" y="14" width="5" height="8" rx="1" fill="currentColor" opacity="0.5" /><rect x="9.5" y="8" width="5" height="14" rx="1" fill="currentColor" opacity="0.7" /><rect x="17" y="2" width="5" height="20" rx="1" fill="currentColor" /></svg>
     ),
@@ -134,17 +143,15 @@ export default function Footer() {
                 transition={{ delay: 0.5 + i * 0.08 }}
                 onMouseEnter={() => setHoveredSocial(i)}
                 onMouseLeave={() => setHoveredSocial(null)}
-                className={`flex items-center gap-4 p-4 rounded-lg border transition-all duration-300 group ${
-                  hoveredSocial === i
+                className={`flex items-center gap-4 p-4 rounded-lg border transition-all duration-300 group ${hoveredSocial === i
                     ? "bg-[#111] border-[#00FF41]/30 shadow-[0_0_20px_rgba(0,255,65,0.05)]"
                     : "bg-[#0a0a0a] border-[#1a1a1a]"
-                }`}
+                  }`}
               >
-                <div className={`w-12 h-12 rounded-lg border flex items-center justify-center transition-all duration-300 ${
-                  hoveredSocial === i
+                <div className={`w-12 h-12 rounded-lg border flex items-center justify-center transition-all duration-300 ${hoveredSocial === i
                     ? "bg-[#00FF41]/10 border-[#00FF41]/30 text-[#00FF41]"
                     : "bg-[#111] border-[#2a2a2a] text-[#666]"
-                }`}>
+                  }`}>
                   {s.icon}
                 </div>
                 <div className="flex-1 min-w-0">
