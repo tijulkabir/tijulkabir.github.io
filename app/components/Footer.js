@@ -90,6 +90,7 @@ export default function Footer() {
             <div className="space-y-4 mb-8">
               <a
                 href="mailto:toha.240113@s.pust.ac.bd"
+                aria-label="Send email to toha.240113@s.pust.ac.bd"
                 className="flex items-center gap-3 p-3 rounded-md bg-[#0a0a0a] border border-[#1a1a1a] hover:border-[#00FF41]/30 transition-all group"
               >
                 <div className="w-10 h-10 rounded-md bg-[#00FF41]/10 border border-[#00FF41]/20 flex items-center justify-center text-[#00FF41] group-hover:bg-[#00FF41]/20 transition-colors">
@@ -105,6 +106,7 @@ export default function Footer() {
                 href="https://github.com/tijulkabir"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Visit GitHub profile (opens in new tab)"
                 className="flex items-center gap-3 p-3 rounded-md bg-[#0a0a0a] border border-[#1a1a1a] hover:border-[#00FF41]/30 transition-all group"
               >
                 <div className="w-10 h-10 rounded-md bg-[#00FF41]/10 border border-[#00FF41]/20 flex items-center justify-center text-[#00FF41] group-hover:bg-[#00FF41]/20 transition-colors">
@@ -121,7 +123,7 @@ export default function Footer() {
               href="mailto:toha.240113@s.pust.ac.bd"
               className="inline-block w-full text-center font-mono text-sm text-[#00FF41] border border-[#00FF41]/30 px-6 py-3 hover:bg-[#00FF41]/10 transition-all duration-300 glow-green-hover rounded-md"
             >
-              {"[ Send Encrypted Mail ]"}
+              {"[ Send Email ]"}
             </a>
           </motion.div>
 

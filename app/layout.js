@@ -14,26 +14,57 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata = {
-  title: "Tijul Kabir Toha | Offensive Security Researcher & Developer",
+  metadataBase: new URL('https://tijulkabir.me'),
+  title: "Tijul Kabir Toha — Offensive Security Researcher & CTF Player",
   description:
-    "Portfolio of Tijul Kabir Toha — Offensive Security Researcher, Competitive Programmer, and Software Developer. TryHackMe National Rank #66, CTF Player, and builder of secure systems.",
+    "Portfolio of Tijul Kabir Toha (Froster). TryHackMe Top 1% globally, CTF player ranked #35 nationally, builder of NetForge, FSociety Lab, Vault 7, and more. Open to security research and collaboration.",
   keywords: [
     "Tijul Kabir Toha",
     "Froster",
-    "cybersecurity",
-    "CTF",
-    "competitive programming",
-    "portfolio",
+    "cybersecurity portfolio",
+    "CTF player Bangladesh",
     "offensive security",
-    "TryHackMe",
+    "TryHackMe top 1 percent",
+    "competitive programming",
     "Codeforces",
+    "security researcher",
+    "PUST CSE",
   ],
-  authors: [{ name: "Tijul Kabir Toha" }],
+  authors: [{ name: "Tijul Kabir Toha", url: "https://tijulkabir.me" }],
+  creator: "Tijul Kabir Toha",
+  alternates: {
+    canonical: 'https://tijulkabir.me',
+  },
   openGraph: {
-    title: "Tijul Kabir Toha | Offensive Security Researcher",
+    title: "Tijul Kabir Toha — Offensive Security Researcher & CTF Player",
     description:
-      "Offensive Security Researcher | Competitive Programmer | Software Developer",
+      "TryHackMe Top 1% globally. CTF player, competitive programmer, and builder of open-source security tools.",
+    url: 'https://tijulkabir.me',
+    siteName: 'Tijul Kabir Toha',
     type: "website",
+    locale: 'en_US',
+    images: [
+      {
+        url: '/og-image.png',
+        width: 1200,
+        height: 630,
+        alt: 'Tijul Kabir Toha — Offensive Security Researcher',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Tijul Kabir Toha — Offensive Security Researcher",
+    description: "TryHackMe Top 1% globally. CTF player & security tool builder.",
+    images: ['/og-image.png'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+    },
   },
 };
 
