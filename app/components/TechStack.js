@@ -19,7 +19,7 @@ export default function TechStack() {
   const [hovered, setHovered] = useState(null);
 
   return (
-    <section id="stack" className="relative py-24 md:py-32" ref={ref}>
+    <section id="stack" aria-label="Technical skills and tools" className="relative py-24 md:py-32" ref={ref}>
       <div className="max-w-7xl mx-auto px-6">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }} className="mb-16">
           <span className="font-mono text-[#00FF41] text-sm tracking-widest">02. </span>

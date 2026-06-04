@@ -1,0 +1,19 @@
+{
+  "name": "Tijul Kabir Toha — Offensive Security Researcher & CTF Player",
+  "short_name": "Tijul Kabir Toha",
+  "description": "Portfolio of Tijul Kabir Toha (Froster). TryHackMe Top 1% globally, CTF player, competitive programmer, and builder of open-source security tools.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#00FF41",
+  "orientation": "portrait-primary",
+  "categories": ["portfolio", "security", "technology"],
+  "lang": "en",
+  "icons": [
+    {
+      "src": "/icon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ]
+}

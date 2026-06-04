@@ -278,6 +278,12 @@ export default function Hero() {
           </motion.div>
         </motion.div>
       </div>
+      <noscript>
+        <div className="relative z-10 max-w-5xl mx-auto px-6 text-center pt-32">
+          <h1 className="text-4xl md:text-7xl font-bold font-mono tracking-tight text-white">Tijul Kabir Toha</h1>
+          <p className="font-mono text-lg text-[#00FF41] mt-4">Offensive Security Researcher &amp; CTF Player</p>
+        </div>
+      </noscript>
     </section>
   );
 }

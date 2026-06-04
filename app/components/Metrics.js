@@ -43,7 +43,7 @@ export default function Metrics() {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section id="metrics" className="relative py-16 overflow-hidden" ref={ref}>
+    <section id="metrics" aria-label="Performance metrics and statistics" className="relative py-16 overflow-hidden" ref={ref}>
       {/* Background accent */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#00FF41]/[0.02] to-transparent" />
 

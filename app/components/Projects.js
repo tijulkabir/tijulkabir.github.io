@@ -227,6 +227,7 @@ export default function Projects() {
                     href={projects[0].github}
                     target="_blank"
                     rel="noopener noreferrer"
+                    aria-label="View NetForge source code on GitHub (opens in new tab)"
                     className="group/btn font-mono text-xs tracking-wider px-5 py-2.5 border border-[#00FF41]/40 text-[#00FF41] bg-[#00FF41]/5 hover:bg-[#00FF41]/15 transition-all duration-300 rounded-md flex items-center gap-2"
                   >
                     <svg
@@ -243,6 +244,7 @@ export default function Projects() {
                       href={projects[0].live}
                       target="_blank"
                       rel="noopener noreferrer"
+                      aria-label="View NetForge live demo (opens in new tab)"
                       className="font-mono text-xs tracking-wider px-5 py-2.5 border border-[#3b82f6]/40 text-[#3b82f6] bg-[#3b82f6]/5 hover:bg-[#3b82f6]/15 transition-all duration-300 rounded-md flex items-center gap-2"
                     >
                       <svg
@@ -423,6 +425,7 @@ export default function Projects() {
                       onClick={(e) => e.stopPropagation()}
                       className="text-[#666] hover:text-[#00FF41] transition-colors duration-300"
                       title="View on GitHub"
+                      aria-label={`View ${proj.title} source code on GitHub (opens in new tab)`}
                     >
                       <svg
                         className="w-5 h-5"

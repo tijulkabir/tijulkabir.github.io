@@ -87,7 +87,7 @@ export default function Footer() {
               Open to CTF collaborations, research opportunities, security consulting, and competitive programming partnerships. If you want to build something that breaks boundaries — let&apos;s connect.
             </p>
 
-            <div className="space-y-4 mb-8">
+            <address className="space-y-4 mb-8 not-italic">
               <a
                 href="mailto:toha.240113@s.pust.ac.bd"
                 aria-label="Send email to toha.240113@s.pust.ac.bd"
@@ -117,7 +117,7 @@ export default function Footer() {
                   <div className="font-mono text-sm text-[#ccc] group-hover:text-[#00FF41] transition-colors">github.com/tijulkabir</div>
                 </div>
               </a>
-            </div>
+            </address>
 
             <a
               href="mailto:toha.240113@s.pust.ac.bd"
@@ -140,6 +140,7 @@ export default function Footer() {
                 href={s.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label={`Visit ${s.name} profile (opens in new tab)`}
                 initial={{ opacity: 0, x: 20 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.5 + i * 0.08 }}

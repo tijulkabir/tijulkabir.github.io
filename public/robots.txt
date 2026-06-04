@@ -1,4 +1,6 @@
+# https://tijulkabir.me — Tijul Kabir Toha
 User-agent: *
 Allow: /
+Disallow: /_next/static/
 
 Sitemap: https://tijulkabir.me/sitemap.xml

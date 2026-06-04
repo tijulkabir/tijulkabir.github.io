@@ -219,6 +219,16 @@ body {
   }
 }
 
+/* ===== CONTENT VISIBILITY (PERFORMANCE) ===== */
+#about,
+#stack,
+#projects,
+#metrics,
+#contact {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 800px;
+}
+
 /* ===== SMOOTH FONT RENDERING ===== */
 body {
   -webkit-font-smoothing: antialiased;

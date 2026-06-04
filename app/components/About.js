@@ -33,7 +33,7 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="about" className="relative py-24 md:py-32" ref={ref}>
+    <section id="about" aria-label="About me" className="relative py-24 md:py-32" ref={ref}>
       <div className="max-w-7xl mx-auto px-6">
         <motion.div initial={{ opacity: 0, x: -20 }} animate={isInView ? { opacity: 1, x: 0 } : {}} transition={{ duration: 0.6 }} className="mb-16">
           <span className="font-mono text-[#00FF41] text-sm tracking-widest">01. </span>

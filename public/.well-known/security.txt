@@ -1,0 +1,7 @@
+# Security Policy for tijulkabir.me
+# https://securitytxt.org/
+
+Contact: mailto:toha.240113@s.pust.ac.bd
+Preferred-Languages: en
+Canonical: https://tijulkabir.me/.well-known/security.txt
+Expires: 2027-06-04T00:00:00.000Z
