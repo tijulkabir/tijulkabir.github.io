@@ -35,7 +35,7 @@ const jsonLd = {
       image: "https://tijulkabir.me/og-image.png",
       jobTitle: "Offensive Security Researcher",
       description:
-        "TryHackMe Top 1% globally, CTF player ranked #35 nationally in Bangladesh, competitive programmer, and builder of open-source security tools including NetForge, FSociety Lab, and Vault 7.",
+        "TryHackMe Top 1% globally, CTF player ranked 16th nationally at EWU National Robofest 2026 (first-ever onsite from PUST), competitive programmer, and builder of open-source security tools including NetForge, FSociety Lab, and Vault 7.",
       affiliation: {
         "@type": "CollegeOrUniversity",
         name: "Pabna University of Science & Technology",
@@ -81,7 +81,7 @@ export const metadata = {
   metadataBase: new URL("https://tijulkabir.me"),
   title: "Tijul Kabir Toha — Offensive Security Researcher & CTF Player",
   description:
-    "Portfolio of Tijul Kabir Toha (Froster). TryHackMe Top 1% globally, CTF player ranked #35 nationally, builder of NetForge, FSociety Lab, Vault 7, and more. Open to security research and collaboration.",
+    "Portfolio of Tijul Kabir Toha (Froster). TryHackMe Top 1% globally, CTF player ranked 16th nationally at EWU National Robofest 2026, builder of NetForge, FSociety Lab, Vault 7, and more. Open to security research and collaboration.",
   applicationName: "Tijul Kabir Toha — Portfolio",
   keywords: [
     "Tijul Kabir Toha",

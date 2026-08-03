@@ -137,9 +137,9 @@ function RoleRotator() {
 }
 
 const quickStats = [
-  { label: "TryHackMe", value: "Top 1% Globally\n#66 BD", icon: "🛡️" },
+  { label: "TryHackMe", value: "Top 1% Globally\n#58 BD", icon: "🛡️" },
   { label: "THM Streak", value: "300 Days", icon: "⏳" },
-  { label: "CTF", value: "#35 BD", icon: "🏴" },
+  { label: "CTF", value: "#16 BD", icon: "🏴" },
   { label: "Projects", value: "9+", icon: "⚡" },
 ];
 

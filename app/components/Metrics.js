@@ -4,7 +4,7 @@ import { useRef, useState, useEffect } from "react";
 
 const metrics = [
   { label: "CTF Points", value: 4500, suffix: "+", icon: "🏴", color: "#00FF41" },
-  { label: "TryHackMe Rank", value: 66, prefix: "#", suffix: " BD", icon: "🔒", color: "#00FF41" },
+  { label: "TryHackMe Rank", value: 58, prefix: "#", suffix: " BD", icon: "🔒", color: "#00FF41" },
   { label: "CF Streak", value: 250, suffix: "D+", icon: "🔥", color: "#f59e0b" },
   { label: "CodeChef", value: 1446, suffix: "★", icon: "⚡", color: "#3b82f6" },
   { label: "GitHub Repos", value: 9, suffix: "+", icon: "📦", color: "#a855f7" },

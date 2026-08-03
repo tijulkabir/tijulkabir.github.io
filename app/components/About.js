@@ -3,13 +3,14 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
 const stats = [
-  { label: "TryHackMe Rank", value: "#66", sub: "Bangladesh", color: "#00FF41" },
-  { label: "CTF National", value: "35th", sub: "IH CTF 2026", color: "#3b82f6" },
+  { label: "TryHackMe Rank", value: "#58", sub: "Bangladesh", color: "#00FF41" },
+  { label: "CTF National", value: "16th", sub: "EWU Robofest 2026", color: "#3b82f6" },
   { label: "Day Streak", value: "300+", sub: "Continuous", color: "#f59e0b" },
   { label: "CF Rating", value: "914", sub: "Newbie → Pupil", color: "#2dd733ff" },
 ];
 
 const certs = [
+  { name: "EWU National Robofest 2026 (Onsite) — Ranked 16th Nationally (First-Ever from PUST)", type: "comp" },
   { name: "CCEP — Cybersecurity Educator Professional", type: "cert" },
   { name: "CPPS — Phishing Prevention Specialist", type: "cert" },
   { name: "Meta Hacker Cup 2025 — Round 1", type: "comp" },
@@ -19,8 +20,8 @@ const certs = [
 
 const timeline = [
   { year: "2024", event: "Started CSE at PUST", icon: "📚" },
-  { year: "2025", event: "TryHackMe Top 1% globally and #66 in BD, BDSec CTF, Meta Hacker Cup", icon: "🔒" },
-  { year: "2026", event: "IH CTF 35th, 300+ Day Streak, Building Echo & NetForge", icon: "⚡" },
+  { year: "2025", event: "TryHackMe Top 1% globally and #58 in BD, BDSec CTF, Meta Hacker Cup", icon: "🔒" },
+  { year: "2026", event: "EWU National Robofest Onsite 16th (first-ever from PUST), IH CTF 35th, 300+ Day Streak, Building Echo & NetForge", icon: "⚡" },
 ];
 
 const fadeUp = {
@@ -55,7 +56,7 @@ export default function About() {
                 <h3 className="text-xl font-bold text-white mb-1">Tijul Kabir Toha <span className="font-mono text-[#00FF41] text-sm font-normal">aka Froster</span></h3>
                 <p className="font-mono text-xs text-[#666] mb-4">CSE @ Pabna University of Science &amp; Technology &bull; Year 2</p>
                 <p className="text-[#999] text-sm leading-relaxed mb-4">
-                  Offensive security researcher with a passion for breaking things (ethically). CTF player for <span className="text-[#00FF41]">PUST_Intruders</span>, ranked <span className="text-white font-semibold">#66 nationally</span> on TryHackMe with a <span className="text-white font-semibold">250+ day streak</span>. Building open-source security tools and pushing toward <span className="text-[#3b82f6]">Expert (1600+)</span> on Codeforces.
+                  Offensive security researcher with a passion for breaking things (ethically). CTF player for <span className="text-[#00FF41]">PUST_Intruders</span>, ranked <span className="text-white font-semibold">#58 nationally</span> on TryHackMe with a <span className="text-white font-semibold">250+ day streak</span>. Building open-source security tools and pushing toward <span className="text-[#3b82f6]">Expert (1600+)</span> on Codeforces.
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {["Pentesting", "CTF", "Reverse Engineering", "Systems Programming", "Competitive Programming"].map((tag) => (
